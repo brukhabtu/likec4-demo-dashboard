@@ -1,0 +1,32 @@
+specification {
+  element service
+  element component
+}
+
+import auth from 'auth'
+import billing from 'billing'
+
+model {
+  service dashboard 'Dashboard' {
+    description 'Internal operations dashboard'
+
+    component web 'Web App' {
+      technology 'React'
+    }
+    component bff 'Backend for Frontend' {
+      technology 'Node.js'
+    }
+  }
+
+  dashboard.web -> dashboard.bff 'API calls'
+  dashboard.bff -> auth.api 'authenticates users'
+  dashboard.bff -> billing.api 'fetches billing data'
+}
+
+views {
+  view dashboardOverview of dashboard {
+    title 'Dashboard'
+    include *, auth, auth.api, billing, billing.api
+    autoLayout TopBottom
+  }
+}

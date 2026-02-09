@@ -1,0 +1,13 @@
+{
+  "name": "dashboard",
+  "federation": {
+    "dependencies": {
+      "auth": {
+        "source": "../likec4-demo-registry"
+      },
+      "billing": {
+        "source": "../likec4-demo-registry"
+      }
+    }
+  }
+}
