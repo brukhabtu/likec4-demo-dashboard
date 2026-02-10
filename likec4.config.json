@@ -3,10 +3,12 @@
   "federation": {
     "dependencies": {
       "auth": {
-        "source": "../likec4-demo-registry"
+        "source": "../likec4-demo-registry",
+        "version": "^1.0.0"
       },
       "billing": {
-        "source": "../likec4-demo-registry"
+        "source": "../likec4-demo-registry",
+        "version": "^1.0.0"
       }
     }
   }
